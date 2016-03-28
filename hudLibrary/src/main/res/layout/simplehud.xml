@@ -1,0 +1,37 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:tools="http://schemas.android.com/tools"
+              android:layout_width="@dimen/w_dp_96"
+              android:layout_height="wrap_content"
+              android:layout_margin="@dimen/w_dp_10"
+              android:orientation="vertical"
+              android:padding="@dimen/w_dp_8">
+
+    <ImageView
+        android:id="@+id/simplehud_image"
+        android:layout_width="@dimen/h_dp_32"
+        android:layout_height="@dimen/h_dp_32"
+        android:layout_gravity="center"
+        android:contentDescription="@string/app_name"
+        tools:visibility="gone"
+        android:padding="@dimen/w_dp_1"/>
+
+    <com.weiteng.hud.widget.SpinView
+        android:id="@+id/simplehud_spin_view"
+        android:layout_width="@dimen/h_dp_38"
+        android:layout_height="@dimen/h_dp_38"
+        android:layout_gravity="center"
+        android:padding="@dimen/w_dp_1"
+        tools:visibility="visible"
+        android:visibility="gone"/>
+
+    <TextView
+        android:id="@+id/simplehud_message"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/h_dp_10"
+        android:gravity="center"
+        android:singleLine="false"
+        tools:text="正在加载"
+        android:textSize="@dimen/text_size_14"/>
+
+</LinearLayout>

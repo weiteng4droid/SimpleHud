@@ -6,7 +6,6 @@ import android.content.DialogInterface.OnCancelListener;
 import android.os.Handler;
 import android.os.Message;
 
-import com.weiteng.hud.interf.OnHudDismissListener;
 import com.weiteng.hud.interf.OnHudFinishListener;
 
 import java.lang.ref.WeakReference;

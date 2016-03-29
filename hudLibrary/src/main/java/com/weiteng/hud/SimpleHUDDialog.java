@@ -5,6 +5,7 @@ import android.content.Context;
 import android.view.Gravity;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.weiteng.hud.widget.SpinView;
@@ -17,7 +18,6 @@ public class SimpleHUDDialog extends Dialog {
     public SimpleHUDDialog(Context context, int theme) {
         super(context, theme);
     }
-
 
     public SimpleHUDDialog(Context context, int theme, OnCancelListener cancelListener) {
         super(context, theme);
@@ -44,17 +44,20 @@ public class SimpleHUDDialog extends Dialog {
     }
 
     public void setImage(int resId) {
-        ImageView imageView = (ImageView) findViewById(R.id.simplehud_image);
         SpinView spinView = (SpinView) findViewById(R.id.simplehud_spin_view);
-
+        LinearLayout.LayoutParams params = (LinearLayout.LayoutParams) spinView.getLayoutParams();
         // show loading SpinView
         if (resId == R.drawable.kprogresshud_spinner) {
-            spinView.setVisibility(View.VISIBLE);
-            imageView.setVisibility(View.GONE);
+            spinView.setState(SpinView.STATE_SPIN);
+            int size = getContext().getResources().getDimensionPixelSize(R.dimen.h_dp_38);
+            params.height = size;
+            params.width = size;
         } else {
-            spinView.setVisibility(View.GONE);
-            imageView.setVisibility(View.VISIBLE);
-            imageView.setImageResource(resId);
+            spinView.setState(SpinView.STATE_ICON);
+            int size = getContext().getResources().getDimensionPixelSize(R.dimen.h_dp_32);
+            params.height = size;
+            params.width = size;
         }
+        spinView.setImageResource(resId);
     }
 }

@@ -3,7 +3,7 @@
 
     <!-- dimens of width size -->
     <dimen name="w_dp_1">1dp</dimen>
-    <dimen name="w_dp_96">96dp</dimen>
+    <dimen name="w_dp_94">94dp</dimen>
     <dimen name="w_dp_100">100dp</dimen>
     <dimen name="w_dp_10">10dp</dimen>
     <dimen name="w_dp_8">8dp</dimen>

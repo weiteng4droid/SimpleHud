@@ -1,9 +1,9 @@
 package com.weiteng.simplehud;
 
+import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.view.View;
 
 import com.weiteng.hud.SimpleHUD;
@@ -61,7 +61,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
 
             case R.id.show_error:
-                SimpleHUD.showErrorMessage(this, "数据异常");
+                SimpleHUD.showErrorMessage(this, "这个数据异常，具体原因是什么我也不知道，哈哈");
                 break;
         }
     }

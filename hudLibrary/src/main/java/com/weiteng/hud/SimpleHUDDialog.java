@@ -3,9 +3,7 @@ package com.weiteng.hud;
 import android.app.Dialog;
 import android.content.Context;
 import android.view.Gravity;
-import android.view.View;
-import android.widget.ImageView;
-import android.widget.LinearLayout;
+import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.weiteng.hud.widget.SpinView;
@@ -45,7 +43,7 @@ public class SimpleHUDDialog extends Dialog {
 
     public void setImage(int resId) {
         SpinView spinView = (SpinView) findViewById(R.id.simplehud_spin_view);
-        LinearLayout.LayoutParams params = (LinearLayout.LayoutParams) spinView.getLayoutParams();
+        ViewGroup.LayoutParams params = spinView.getLayoutParams();
         // show loading SpinView
         if (resId == R.drawable.kprogresshud_spinner) {
             spinView.setState(SpinView.STATE_SPIN);

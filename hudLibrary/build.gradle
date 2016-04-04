@@ -27,16 +27,16 @@ ext {
     bintrayRepo = 'maven'
     bintrayName = 'simplehud'
 
-    publishedGroupId = 'com.weiteng.'
+    publishedGroupId = 'com.github.weiteng4droid'
     libraryName = 'hudLibrary'
-    artifact = 'simplehud'
+    artifact = 'hudLibrary'
 
-    libraryDescription = 'A simple dialog for Facebook Like IOS on Android'
+    libraryDescription = 'A simple dialog Like IOS on Android'
 
     siteUrl = 'https://github.com/weiteng4droid/SimpleHud'
     gitUrl = 'https://github.com/weiteng4droid/SimpleHud.git'
 
-    libraryVersion = '1.0.0'
+    libraryVersion = '1.0.1'
 
     developerId = 'weiteng'
     developerName = 'weitengyang'

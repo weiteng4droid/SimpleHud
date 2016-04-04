@@ -10,6 +10,7 @@
 
     <!-- dimens of height size -->
     <dimen name="h_dp_10">10dp</dimen>
+    <dimen name="h_dp_12">12dp</dimen>
     <dimen name="h_dp_32">32dp</dimen>
     <dimen name="h_dp_38">38dp</dimen>
 

@@ -4,7 +4,19 @@
 ##Screen Shot
 ![Alt text](screen.gif)
 
-##Usage
+## Usage
+
+### Step 1
+
+### Gradle
+
+	dependencies {
+	    compile 'com.github.weiteng4droid:hudLibrary:1.0.1'
+	}
+
+If it doesn't work, please send me a email, weiteng4droid@163.com
+
+### Step 2
 show a simple dialog in activity
 
 * loading

@@ -13,6 +13,7 @@ import android.view.WindowManager;
  */
 public class SpinLayout extends ViewGroup {
 
+    private static boolean DEBUG = false;
     private static final String TAG = "SpinLayout";
 
     private int mDisplayWidth;
@@ -31,7 +32,6 @@ public class SpinLayout extends ViewGroup {
         DisplayMetrics metrics = new DisplayMetrics();
         wm.getDefaultDisplay().getMetrics(metrics);
         mDisplayWidth = metrics.widthPixels;
-        Log.d(TAG, "mDisplayWidth = " + mDisplayWidth);
     }
 
     @Override
@@ -58,7 +58,10 @@ public class SpinLayout extends ViewGroup {
                 usedWidth = child.getMeasuredWidth();
             }
 
-            Log.d(TAG, "child.getMeasuredWidth() = " + child.getMeasuredWidth() + ", child.getMeasuredHeight() = " + child.getMeasuredHeight());
+            if (DEBUG) {
+                Log.d(TAG, "child.getMeasuredWidth() = " + child.getMeasuredWidth()
+                         + ", child.getMeasuredHeight() = " + child.getMeasuredHeight());
+            }
         }
 
         int width, height;

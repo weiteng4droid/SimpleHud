@@ -46,7 +46,6 @@ public class SimpleHUD {
     public static void showErrorMessage(Context context, String msg) {
         dismiss();
         setDialog(context, msg, R.drawable.simplehud_error, true);
-        sHandler = new HudHandler(sDialog);
 
         if (sDialog != null) {
             sDialog.show();
@@ -62,7 +61,6 @@ public class SimpleHUD {
     public static void showSuccessMessage(Context context, String msg) {
         dismiss();
         setDialog(context, msg, R.drawable.simplehud_success, true);
-        sHandler = new HudHandler(sDialog);
 
         if (sDialog != null) {
             sDialog.show();
@@ -73,7 +71,6 @@ public class SimpleHUD {
     public static void showInfoMessage(Context context, String msg) {
         dismiss();
         setDialog(context, msg, R.drawable.simplehud_info, true);
-        sHandler = new HudHandler(sDialog);
 
         if (sDialog != null) {
             sDialog.show();
@@ -92,6 +89,8 @@ public class SimpleHUD {
         sDialog.setImage(resId);
         sDialog.setCanceledOnTouchOutside(false);
         sDialog.setCancelable(cancelable);
+
+        sHandler = new HudHandler(sDialog);
     }
 
     private static void setDialog(Context ctx, String msg, int resId, boolean cancelable, OnCancelListener cancelListener) {
@@ -105,6 +104,8 @@ public class SimpleHUD {
         sDialog.setImage(resId);
         sDialog.setCanceledOnTouchOutside(false);
         sDialog.setCancelable(cancelable);
+
+        sHandler = new HudHandler(sDialog);
     }
 
     public static void dismiss() {

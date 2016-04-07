@@ -5,14 +5,16 @@ import android.os.Handler;
 import android.os.Message;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.widget.Toast;
 
 import com.weiteng.hud.SimpleHUD;
+import com.weiteng.hud.interf.OnHudFinishListener;
 
 import java.lang.ref.WeakReference;
 
-public class MainActivity extends AppCompatActivity implements View.OnClickListener {
+public class MainActivity extends AppCompatActivity implements View.OnClickListener, OnHudFinishListener {
 
-    private static final int MESSAGE_DELAY = 2000;
+    private static final int MESSAGE_DELAY = 3000;
     private static final int DISMISS_LOADING = 1;
 
     private static class SimpleHandler extends Handler {
@@ -26,6 +28,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         public void handleMessage(Message msg) {
             if (msg.what == DISMISS_LOADING) {
                 mWeakReference.get().dismiss();
+                SimpleHUD.showSuccessMessage(mWeakReference.get(), "load finish", mWeakReference.get());
             }
         }
     }
@@ -48,7 +51,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.show_loading:
-                SimpleHUD.showLoadingMessage(this, "正在加载");
+                SimpleHUD.showLoadingMessage(this, "loading");
                 mHandler.sendEmptyMessageDelayed(DISMISS_LOADING, MESSAGE_DELAY);
                 break;
 
@@ -64,6 +67,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 SimpleHUD.showErrorMessage(this, "这个数据异常，具体原因是什么我也不知道，哈哈");
                 break;
         }
+    }
+
+    @Override
+    public void onHudFinish() {
+        Toast.makeText(MainActivity.this, "dismiss", Toast.LENGTH_SHORT).show();
     }
 
     public void dismiss() {

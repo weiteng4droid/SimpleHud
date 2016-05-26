@@ -1,5 +1,5 @@
 #SimpleHud
--
+- A simple loading dialog for android
 
 ##Screen Shot
 ![Alt text](screen.gif)
@@ -11,7 +11,7 @@
 ### Gradle
 
 	dependencies {
-	    compile 'com.github.weiteng4droid:hudLibrary:1.0.1'
+	    compile 'com.github.weiteng4droid:hudLibrary:1.0.2'
 	}
 
 If it doesn't work, please send me a email, weiteng4droid@163.com
@@ -21,7 +21,7 @@ show a simple dialog in activity
 
 * loading
 
-	SimpleHUD.showLoadingMessage(this, "正在加载");
+	SimpleHUD.showLoadingMessage(this, "loading");
 	
 * info
 

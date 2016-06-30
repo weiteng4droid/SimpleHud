@@ -30,7 +30,7 @@ public class SimpleHUD {
         setDialog(context, msg, R.drawable.kprogresshud_spinner, cancelable);
 
         if (sDialog != null) {
-            sDialog.show();
+            show();
         }
     }
 
@@ -39,7 +39,7 @@ public class SimpleHUD {
         setDialog(context, msg, R.drawable.kprogresshud_spinner, true, cancelListener);
 
         if (sDialog != null) {
-            sDialog.show();
+            show();
         }
     }
 
@@ -48,7 +48,7 @@ public class SimpleHUD {
         setDialog(context, msg, R.drawable.simplehud_error, true);
 
         if (sDialog != null) {
-            sDialog.show();
+            show();
             dismissAfterTime(2000);
         }
     }
@@ -63,7 +63,7 @@ public class SimpleHUD {
         setDialog(context, msg, R.drawable.simplehud_success, true);
 
         if (sDialog != null) {
-            sDialog.show();
+            show();
             dismissAfterTime(1000);
         }
     }
@@ -73,7 +73,7 @@ public class SimpleHUD {
         setDialog(context, msg, R.drawable.simplehud_info, true);
 
         if (sDialog != null) {
-            sDialog.show();
+            show();
             dismissAfterTime(2000);
         }
     }
@@ -135,17 +135,13 @@ public class SimpleHUD {
     }
 
     private static boolean isContextValid() {
-        if (sContext == null) {
-            return false;
-        }
+        return sContext != null && !((Activity) sContext).isFinishing();
+    }
 
-        if (sContext instanceof Activity) {
-            Activity act = (Activity) sContext;
-            if (act.isFinishing()) {
-                return false;
-            }
+    private static void show() {
+        if (isContextValid()) {
+            sDialog.show();
         }
-        return true;
     }
 
     public static boolean isHUDShowing() {

@@ -36,7 +36,7 @@ public class SimpleHUD {
 
     public static void showLoadingMessage(Context context, String msg, OnCancelListener cancelListener) {
         dismiss();
-        setDialog(context, msg, R.drawable.kprogresshud_spinner, true, cancelListener);
+        setDialog(context, msg, R.drawable.kprogresshud_spinner, false, cancelListener);
 
         if (sDialog != null) {
             show();

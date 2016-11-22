@@ -148,7 +148,7 @@ public class SimpleHUD {
         return sDialog != null && sDialog.isShowing();
     }
 
-    static class HudHandler extends Handler {
+    private static class HudHandler extends Handler {
         WeakReference<SimpleHUDDialog> mDialog;
         OnHudFinishListener mFinishListener;
 
@@ -159,7 +159,7 @@ public class SimpleHUD {
         @Override
         public void handleMessage(Message msg) {
             if (msg.what == MESSAGE_DISMISS_DIALOG) {
-                if (mDialog.get() != null && mDialog.get().isShowing()) {
+                if (isContextValid() && mDialog.get() != null && mDialog.get().isShowing()) {
                     mDialog.get().dismiss();
 
                     if (mFinishListener != null) {

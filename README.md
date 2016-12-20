@@ -11,7 +11,7 @@
 ### Gradle
 
 	dependencies {
-	    compile 'com.github.weiteng4droid:hudLibrary:1.0.4'
+	    compile 'com.github.weiteng4droid:hudLibrary:1.1.0'
 	}
 
 If it doesn't work, please send me a email, weiteng4droid@163.com

@@ -3,42 +3,31 @@
               android:layout_width="match_parent"
               android:layout_height="match_parent"
               android:background="@android:color/white"
+              android:padding="10dp"
               android:orientation="vertical">
 
     <Button
         android:id="@+id/show_loading"
-        android:layout_width="match_parent"
-        android:layout_height="40dp"
-        android:gravity="center"
-        android:textSize="15sp"
-        android:text="loading"/>
+        style="@style/label_style"
+        android:text="加载动画"/>
 
 
     <Button
         android:id="@+id/show_success"
-        android:layout_width="match_parent"
-        android:layout_height="40dp"
-        android:gravity="center"
-        android:textSize="15sp"
+        style="@style/label_style"
         android:layout_marginTop="10dp"
-        android:text="success"/>
+        android:text="成功提示"/>
 
     <Button
         android:id="@+id/show_info"
-        android:layout_width="match_parent"
-        android:layout_height="40dp"
-        android:gravity="center"
-        android:textSize="15sp"
+        style="@style/label_style"
         android:layout_marginTop="10dp"
-        android:text="info"/>
+        android:text="信息提示"/>
 
     <Button
         android:id="@+id/show_error"
-        android:layout_width="match_parent"
-        android:layout_height="40dp"
-        android:gravity="center"
-        android:textSize="15sp"
+        style="@style/label_style"
         android:layout_marginTop="10dp"
-        android:text="error"/>
+        android:text="错误提示"/>
 
 </LinearLayout>

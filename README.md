@@ -11,7 +11,7 @@
 ### Gradle
 
 	dependencies {
-	    compile 'com.github.weiteng4droid:hudLibrary:1.1.0'
+	    compile 'com.github.weiteng4droid:hudLibrary:1.1.1'
 	}
 
 If it doesn't work, please send me a email, weiteng4droid@163.com
@@ -21,7 +21,7 @@ show a simple dialog in activity
 
 * loading
 
-	SimpleHUD.showLoadingMessage(this, "loading");
+	SimpleHUD.showLoadingMessage(this, "正在加载");
 	
 * info
 

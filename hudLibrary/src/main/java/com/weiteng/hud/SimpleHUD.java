@@ -80,4 +80,8 @@ public class SimpleHUD {
             sSimpleHUD = null;
         }
     }
+
+    public static boolean isHUDShowing() {
+        return sSimpleHUD != null && sSimpleHUD.isShowing();
+    }
 }

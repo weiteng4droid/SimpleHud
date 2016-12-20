@@ -51,7 +51,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.show_loading:
-                SimpleHUD.showLoadingMessage(this, "loading");
+                SimpleHUD.showLoadingMessage(this, "正在加载");
                 mHandler.sendEmptyMessageDelayed(DISMISS_LOADING, MESSAGE_DELAY);
                 break;
 

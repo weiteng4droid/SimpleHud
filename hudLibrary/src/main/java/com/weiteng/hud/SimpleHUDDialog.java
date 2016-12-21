@@ -132,6 +132,14 @@ public class SimpleHUDDialog extends Dialog {
         }
     }
 
+    @Override
+    public void dismiss() {
+        super.dismiss();
+        if (millisecond > 0) {
+            mHudHandler.removeMessages(MESSAGE_DISMISS_DIALOG);
+        }
+    }
+
     private void dismissAfterTime() {
         if (millisecond > 0) {
             mHudHandler.sendEmptyMessageDelayed(MESSAGE_DISMISS_DIALOG, millisecond);

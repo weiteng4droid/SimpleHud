@@ -13,13 +13,16 @@ public class SimpleHUD {
     private static SimpleHUDDialog sSimpleHUD;
 
     public static void showInfoMessage(Context context, String msg) {
-        new SimpleHUDDialog.Builder(context)
+        release();
+
+        sSimpleHUD = new SimpleHUDDialog.Builder(context)
                 .setMessage(msg)
                 .setCancel(true)
                 .setImage(R.drawable.simplehud_info)
                 .dismissMillisecond(2000)
-                .create()
-                .show();
+                .create();
+
+        sSimpleHUD.show();
     }
 
     public static void showLoadingMessage(Context context, String msg) {
@@ -27,6 +30,8 @@ public class SimpleHUD {
     }
 
     public static void showLoadingMessage(Context context, String msg, boolean cancel) {
+        release();
+
         sSimpleHUD = new SimpleHUDDialog.Builder(context)
                 .setMessage(msg)
                 .setCancel(cancel)
@@ -38,6 +43,8 @@ public class SimpleHUD {
     }
 
     public static void showLoadingMessage(Context context, String msg, OnCancelListener cancelListener) {
+        release();
+
         sSimpleHUD = new SimpleHUDDialog.Builder(context)
                 .setMessage(msg)
                 .setCancel(true)
@@ -49,13 +56,16 @@ public class SimpleHUD {
     }
 
     public static void showErrorMessage(Context context, String msg) {
-        new SimpleHUDDialog.Builder(context)
+        release();
+
+        sSimpleHUD = new SimpleHUDDialog.Builder(context)
                 .setMessage(msg)
                 .setCancel(true)
                 .setImage(R.drawable.simplehud_error)
                 .dismissMillisecond(2000)
-                .create()
-                .show();
+                .create();
+
+        sSimpleHUD.show();
     }
 
     public static void showSuccessMessage(Context context, String msg) {
@@ -63,14 +73,17 @@ public class SimpleHUD {
     }
 
     public static void showSuccessMessage(Context context, String msg, OnHudFinishListener listener) {
-        new SimpleHUDDialog.Builder(context)
+        release();
+
+        sSimpleHUD = new SimpleHUDDialog.Builder(context)
                 .setMessage(msg)
                 .setCancel(true)
                 .setImage(R.drawable.simplehud_success)
                 .dismissMillisecond(2000)
                 .setHudFinishListener(listener)
-                .create()
-                .show();
+                .create();
+
+        sSimpleHUD.show();
     }
 
     public static void dismiss() {
@@ -83,5 +96,11 @@ public class SimpleHUD {
 
     public static boolean isHUDShowing() {
         return sSimpleHUD != null && sSimpleHUD.isShowing();
+    }
+
+    private static void release() {
+        if (isHUDShowing()) {
+            dismiss();
+        }
     }
 }

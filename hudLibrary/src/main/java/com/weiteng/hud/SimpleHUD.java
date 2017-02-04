@@ -87,9 +87,8 @@ public class SimpleHUD {
     }
 
     public static void dismiss() {
-        if (sSimpleHUD != null) {
+        if (isHUDShowing()) {
             sSimpleHUD.dismiss();
-
             sSimpleHUD = null;
         }
     }

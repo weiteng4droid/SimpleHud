@@ -16,6 +16,8 @@ import com.weiteng.hud.widget.SpinView;
 import java.lang.ref.WeakReference;
 
 /**
+ * Simple dialog for hint
+ *
  * Created by weiTeng on 2016/3/17.
  */
 public class SimpleHUDDialog extends Dialog {
@@ -134,7 +136,10 @@ public class SimpleHUDDialog extends Dialog {
 
     @Override
     public void dismiss() {
-        super.dismiss();
+        if (mContext instanceof Activity) {
+            if (!((Activity) mContext).isFinishing()) super.dismiss();
+        }
+
         if (millisecond > 0) {
             mHudHandler.removeMessages(MESSAGE_DISMISS_DIALOG);
         }

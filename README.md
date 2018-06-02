@@ -1,7 +1,7 @@
-#SimpleHud
+## SimpleHud
 - A simple loading dialog for android
 
-##Screen Shot
+## Screen Shot
 ![Alt text](screen.gif)
 
 ## Usage
